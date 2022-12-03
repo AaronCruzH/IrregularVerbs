@@ -1,0 +1,273 @@
+#cssBody{
+    background-color: purple;
+    display: grid;
+    place-items: center;
+    position: relative;
+    z-index: -2;
+}
+
+#mainDiv, #greetingDiv{
+    height: calc(93vh);
+    width: 93%;
+    background-color: rgb(232, 218, 208);
+    position: relative;
+    /*
+    top: 50%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);*/
+    display: grid;
+    place-items: center;
+    gap: 7%;
+    z-index: -2;
+}
+
+#cssBody div[hidden]{
+    display: none;
+}
+
+/*:host([hidden]){
+    display: none;
+}
+
+#mainDiv[hidden]{
+    display: none;
+}*/
+
+#greetingDiv {
+    background-color: purple;
+    border: 1px solid gold;
+    color: rgb(232, 218, 208);
+}
+
+#instructionsDiv {
+    text-align: justify;
+    font-size: 100%;
+}
+
+#tenseDiv{
+    height: 100%;
+    width: 99%;
+    display: grid;
+    place-items: center;
+    /*left: 50%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+    border: 1px solid gold;
+    */
+}
+
+#answersDiv{
+    /*
+    border: 1px solid red;
+    height: calc(37vh);*/
+    width: 100%;
+    text-align: center;
+    height: 150%;
+    display: flex;
+    gap: 5%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: -2;
+}
+
+@media (max-width: 600px) {
+    #answersDiv{
+        flex-direction: column;
+    }
+}
+
+.labelHolder {
+    position: relative;
+}
+
+#nextButton{
+    text-align: center;
+	width: 30%;
+	height: 30%;
+    font-weight: bold;
+	background: rgb(232, 218, 208);
+    font-size: 79%;
+    /*position: relative;*/
+}
+
+#nextButton:hover{
+	background: rgb(223, 203, 189);
+}
+#nextButton:active{
+	background: rgb(232, 218, 208);
+}
+
+
+.horizontalHolder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1%;
+    width: 100%;
+    height: 100%;
+   /* border: 1px solid red;*/
+}
+
+p{
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid purple;
+    height: 100%;
+    width: 99%;
+    font-size: 93%;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+p:hover{
+	background: purple;
+}
+p:active{
+	background: rgb(179, 0, 179);
+}
+
+#scoreButton{
+    text-align: right;
+	/*box-sizing: border-box;*/
+    width: 80%;
+	height: 100%;
+	background: rgb(179, 0, 179);
+    color: rgb(232, 218, 208);
+    display: grid;
+    place-items: center;
+}
+
+#tense{
+    text-align: right;
+    align-items: center;
+    justify-content: right;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-size: 200%;
+    /*border: 1px solid purple;*/
+}
+
+#spanishMeaning{
+    width: 90%;
+    text-align: center;
+    font-size: 100%;
+}
+
+.mydiv, .theDiv {
+    /*display: inline-flex;*/
+    display: flex;
+    gap: 7%;
+	position: relative;
+	width: 100%;
+	height: 100%;
+    justify-content: center;
+	align-items: center;     
+    /*margin-left: 5%;
+	left: -3%;
+	top: 33%;*/
+    font-size: 133%;
+}
+
+.mydiv, .theDiv:hover{
+	background: rgb(232, 218, 208);
+}
+
+.animate:before, .animate:after , .animateX:hover:before,.animateX:hover:after{
+	content: '';
+	position: absolute;
+	left: -8px;
+	top: -8px;
+	background: linear-gradient(120deg, #79fb00, #8d01a0, #031ba5,#ff004c,  
+	#e6036d, #fb0094,#ff6600, #04c2e4,#adad02, #00c3ff);
+	background-size: 300%;
+	width: calc(100% + 16px);
+	height: calc(100% + 16px);
+	z-index: -1;
+	animation: BGgradient 15s ease infinite; 
+}
+
+@keyframes BGgradient {
+	0% {
+		background-position: 0% 200%;
+	}
+	50% {
+		background-position: 200% 0%;
+	} 
+	100% {
+		background-position: 0% 330%;
+	}
+}
+
+.animate:after,.animateX:after {
+	filter: brightness(1.4);
+	filter: drop-shadow(16px 16px 20px rgb(248, 220, 97));
+	filter: blur(15px);
+}
+
+.wrongAnswer{
+	color: red;
+}
+.rightAnswer{
+	color:  limegreen;
+}
+
+footer {
+    position: fixed;
+    right: 3%;
+    bottom: 0%;
+    font-style: italic;
+}
+
+.tenseChecker::before, .tenseCheckerPresent::before, .tenseCheckerPast::before, .tenseCheckerPastParticiple::before {
+    content: '';
+    width: 0;
+    height: 0;
+    top: -5px;
+    position: absolute;
+    left: 6px;
+    border-left: 5px solid rgba(0, 0, 0, 0);
+    border-right: 5px solid rgba(0, 0, 0, 0);
+}
+
+.tenseChecker, .tenseCheckerPresent, .tenseCheckerPast, .tenseCheckerPastParticiple {
+    font-size: 79%;
+    position: absolute;
+    z-index: 10;
+    top: 113%;
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 1px;
+}
+
+.tenseCheckerPresent::before {
+    border-bottom: 5px solid #DB5ABA;
+}
+
+.tenseCheckerPresent {
+    background: #DB5ABA;
+    box-shadow: 0 6px 2px -2px #C455A8;
+}
+
+.tenseCheckerPast::before {
+    border-bottom: 5px solid #CF8BA3;
+}
+
+.tenseCheckerPast {
+    background: #CF8BA3;
+    box-shadow: 0 6px 2px -2px #C17F96;
+}
+
+.tenseCheckerPastParticiple::before {
+    border-bottom: 5px solid #CB688E;
+}
+
+.tenseCheckerPastParticiple {
+    background: #CB688E;
+    box-shadow: 0 6px 2px -2px #B63E6C;
+}
